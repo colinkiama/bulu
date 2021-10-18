@@ -17,3 +17,8 @@ add_project_arguments(['--enable-experimental'], language: 'vala')
 g_ir_compiler = find_program('g-ir-compiler', required: false)
 
 subdir('src')
+
+libbulu_dep = declare_dependency(
+  include_directories: include_directories('./src'),
+  link_with: libbulu
+)
