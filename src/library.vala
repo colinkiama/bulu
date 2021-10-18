@@ -1,5 +1,5 @@
 namespace Bulu {
     public static void say_hello () {
-        stdout.printf ("say_hello () called\n");
+        stdout.printf ("Bulu says hello\n");
     }
 }
