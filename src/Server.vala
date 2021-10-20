@@ -13,7 +13,7 @@ namespace Bulu {
 		}
 
 		construct {
-			print ("Constucted Bulu Server!");
+			print ("Constructed Bulu Server!");
 		}
 	}
 }
