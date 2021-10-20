@@ -6,8 +6,14 @@ conf.set('PROJECT_VERSION', '0.0.1')
 conf.set('API_VERSION', API_VERSION)
 
 sources = files([
-  'library.vala'
-  ])
+  'Handler.vala',
+  'HandlerArgs.vala',
+  'Server.vala',
+  'ServerConfiguration.vala',
+  'Actions/HandlerAction.vala',
+  'Builders/HandlerArgsBuilder.vala',
+  'Constants/Method.vala'
+])    
 
 libbulu = library('bulu-' + API_VERSION,
   sources,
