@@ -1,6 +1,6 @@
 namespace Bulu {
 	public class Handler {
-		public Handler(string method, Bulu.HandlerAction handler_action) {
+		public Handler(Bulu.Method method, Bulu.HandlerAction handler_action) {
 			
 		}
 	}

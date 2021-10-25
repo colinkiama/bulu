@@ -10,9 +10,9 @@ sources = files([
   'HandlerArgs.vala',
   'Server.vala',
   'ServerConfiguration.vala',
-  'Actions/HandlerAction.vala',
-  'Builders/HandlerArgsBuilder.vala',
-  'Constants/Method.vala'
+  'Action/HandlerAction.vala',
+  'Builder/HandlerArgsBuilder.vala',
+  'Enum/Method.vala'
 ])    
 
 libbulu = library('bulu-' + API_VERSION,
@@ -57,6 +57,20 @@ pkgconfig.generate(libbulu,
 
 if get_option('enable_valadoc')
   valadoc = find_program('valadoc')
+
+  valadoc_command = [
+      valadoc,
+      '-o', meson.current_build_dir() / 'Bulu-' + API_VERSION,
+      '--doclet',
+      'devhelp',
+      '@INPUT@',
+      '--force'
+  ]
+
+  foreach dependency : dependencies
+    valadoc_command += '--pkg=' + dependency.name()
+  endforeach
+
   bulu_docs = custom_target('bulu_apidocs',
     input: sources,
     install: true,
@@ -65,14 +79,7 @@ if get_option('enable_valadoc')
     #        buildtarget via the output parameter.
     #        Find a nicer solution
     install_dir: get_option('datadir') / 'devhelp' / 'books',
-    command: [
-      valadoc,
-      '-o', meson.current_build_dir() / 'Bulu-' + API_VERSION,
-      '--doclet',
-      'devhelp',
-      '@INPUT@',
-      '--force'
-    ],
+    command: valadoc_command,
     output: 'Bulu-' + API_VERSION)
 
   install_subdir(meson.current_build_dir() / 'Bulu-' + API_VERSION / 'Bulu-' + API_VERSION,
