@@ -8,10 +8,12 @@ conf.set('API_VERSION', API_VERSION)
 sources = files([
   'Handler.vala',
   'HandlerArgs.vala',
+  'Router.vala',
   'Server.vala',
   'ServerConfiguration.vala',
   'Action/HandlerAction.vala',
   'Builder/HandlerArgsBuilder.vala',
+  'Builder/ServerConfigurationBuilder.vala',
   'Enum/Method.vala',
   'Helpers/MethodHelpers.vala'
 ])    

@@ -1,6 +1,6 @@
 namespace Bulu {
 	public class Server: Soup.Server {
-		public Bulu.ServerConfiguration server_configuration { get; construct; }
+		Bulu.ServerConfiguration server_configuration { get; private set; }
 
 		/*
 		* It's Server time
@@ -8,12 +8,8 @@ namespace Bulu {
 		*
 		*
 		*/
-		public Server (ServerConfiguration server_config) {
-			Object(server_configuration: server_config);
-		}
-
-		construct {
-			print ("Constructed Bulu Server!");
+		public Server (Bulu.Builder.ServerConfigurationBuilder server_config_builder) {
+			this.server_configuration = server_config_builder.build ();
 		}
 	}
 }
