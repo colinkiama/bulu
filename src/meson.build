@@ -12,7 +12,8 @@ sources = files([
   'ServerConfiguration.vala',
   'Action/HandlerAction.vala',
   'Builder/HandlerArgsBuilder.vala',
-  'Enum/Method.vala'
+  'Enum/Method.vala',
+  'Helpers/MethodHelpers.vala'
 ])    
 
 libbulu = library('bulu-' + API_VERSION,
