@@ -11,5 +11,7 @@ namespace Bulu {
 		public Server (Bulu.Builder.ServerConfigurationBuilder server_config_builder) {
 			this.server_configuration = server_config_builder.build ();
 		}
+
+		
 	}
 }
