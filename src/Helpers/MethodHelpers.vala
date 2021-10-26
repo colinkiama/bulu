@@ -9,10 +9,14 @@ namespace Bulu.Helpers.MethodHelpers {
 				return "POST";
 			case Bulu.Method.DELETE:
 				return "DELETE";
+			case Bulu.Method.CONNECT:
+				return "CONNECT";
 			case Bulu.Method.OPTIONS:
 				return "OPTIONS";
-			case Bulu.Method.SET:
-				return "SET";
+			case Bulu.Method.TRACE:
+				return "TRACE";
+			case Bulu.Method.PATCH:
+				return "PATCH";
 			default:
 				error ("Unkown HTTP Method: %s".printf (method.to_string ()));
 		}

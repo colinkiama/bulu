@@ -2,14 +2,12 @@ using Gee;
 
 namespace Bulu {
 	public class Router : Object {
-		public Map<string, Bulu.Handler> route_handlers { get; construct; }
+		private Map<string, Gee.List<Bulu.Handler>> route_handlers;
 
 		public Router () {
-			Object (route_handlers: route_handlers);
+			this.route_handlers = new HashMap<string, Gee.List<Bulu.Handler>> ();
 		}
 
-		construct {
-			route_handlers = new HashMap<string, Bulu.Handler> ();
-		}
+		
 	}
 }
