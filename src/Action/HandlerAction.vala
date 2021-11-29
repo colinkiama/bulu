@@ -1,3 +1,3 @@
 namespace Bulu {
-	public delegate void HandlerAction(Bulu.HandlerArgs args);
+    public delegate void HandlerAction (Bulu.HandlerArgs args);
 }
